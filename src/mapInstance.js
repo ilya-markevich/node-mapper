@@ -22,19 +22,31 @@ class MapInstance {
   }
 
   mapField(name, mapTo) {
-    this.mapInfo.set(name, mapTo);
+    const self = this;
+
+    self.mapInfo.set(name, mapTo);
+    return self;
   }
 
   ignoreField(name) {
-    this.mapInfo.set(name, null);
+    const self = this;
+
+    self.mapInfo.set(name, null);
+    return self;
   }
 
   mapFieldByPath(name, mapPath) {
-    this.mapInfo.set(name, value => get(value, mapPath));
+    const self = this;
+
+    self.mapInfo.set(name, value => get(value, mapPath));
+    return self;
   }
 
   convert(cb) {
-    this.convertCb = cb;
+    const self = this;
+
+    self.mapInfo.clear();
+    self.convertCb = cb;
   }
 
   map(value) {

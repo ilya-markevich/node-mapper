@@ -3,14 +3,14 @@
 require('should');
 
 const testData = require('../data/conventions/conventionsFactory');
-const { CAMEL_CASE_CONVENTION, PASCAL_CASE_CONVENTION, SNAKE_CASE_CONVENTION } = require('../../src/fieldConventions/constants');
+const { CAMEL_CASE_CONVENTION, PASCAL_CASE_CONVENTION, SNAKE_CASE_CONVENTION } = require('../../../src/fieldConventions/constants');
 
 describe('Convention Factory', () => {
   let factory;
 
   beforeEach(() => {
-    delete require.cache[require.resolve('../../src/fieldConventions/conventionsFactory')];
-    factory = require('../../src/fieldConventions/conventionsFactory');
+    delete require.cache[require.resolve('../../../src/fieldConventions/conventionsFactory')];
+    factory = require('../../../src/fieldConventions/conventionsFactory');
   });
 
   describe('Initial State', () => {

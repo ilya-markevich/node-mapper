@@ -5,8 +5,8 @@ require('should');
 const { upperFirst } = require('lodash');
 const sinon = require('sinon');
 
-const { CAMEL_CASE_CONVENTION, PASCAL_CASE_CONVENTION, SNAKE_CASE_CONVENTION } = require('../src/fieldConventions/constants');
-const Mapper = require('../src/mapper');
+const { CAMEL_CASE_CONVENTION, PASCAL_CASE_CONVENTION, SNAKE_CASE_CONVENTION } = require('../../src/fieldConventions/constants');
+const Mapper = require('../../src/mapper');
 
 const testData = require('./data/mapper');
 

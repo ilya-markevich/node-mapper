@@ -2,8 +2,8 @@
 
 require('should');
 
-const { PASCAL_CASE_CONVENTION } = require('../../src/fieldConventions/constants');
-const PascalCaseConvention = require('../../src/fieldConventions/pascalCase');
+const { PASCAL_CASE_CONVENTION } = require('../../../src/fieldConventions/constants');
+const PascalCaseConvention = require('../../../src/fieldConventions/pascalCase');
 
 const generateTests = require('./testsGenerator');
 const { testFields } = require('../data/conventions/pascalCase');
