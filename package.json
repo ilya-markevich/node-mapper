@@ -1,0 +1,12 @@
+{
+  "name": "node-mapper",
+  "version": "0.0.1",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "should": "^11.2.0",
+    "sinon": "^1.17.7"
+  }
+}
