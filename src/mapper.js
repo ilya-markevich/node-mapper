@@ -43,11 +43,11 @@ class Mapper {
     return CAMEL_CASE_CONVENTION;
   }
 
-  get PASCAL_CONVENTION() {
+  get PASCAL_CASE_CONVENTION() {
     return PASCAL_CASE_CONVENTION;
   }
 
-  get SNAKE_CONVENTION() {
+  get SNAKE_CASE_CONVENTION() {
     return SNAKE_CASE_CONVENTION;
   }
 

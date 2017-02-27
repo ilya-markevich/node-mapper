@@ -100,7 +100,7 @@ class MapInstance {
     const sourceFields = sourceType.getFields(value);
 
     sourceFields.forEach((sourceField) => {
-      const fieldInDest = convention(sourceField);
+      const fieldInDest = convention.getField(sourceField);
 
       if (sourceField in value && destType.hasProperty(fieldInDest)) {
         destObj[fieldInDest] = value[sourceField];

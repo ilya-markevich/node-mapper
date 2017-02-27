@@ -18,7 +18,7 @@ class TypeWrapper {
   }
 
   getInstance() {
-    return Object.assign({}, this.typeInstance);
+    return Reflect.construct(this.type, []);
   }
 
   hasProperty(name) {

@@ -16,8 +16,8 @@ describe('Mapper', () => {
       const mapper = new Mapper();
 
       mapper.CAMEL_CASE_CONVENTION.should.be.eql(CAMEL_CASE_CONVENTION);
-      mapper.PASCAL_CONVENTION.should.be.eql(PASCAL_CASE_CONVENTION);
-      mapper.SNAKE_CONVENTION.should.be.eql(SNAKE_CASE_CONVENTION);
+      mapper.PASCAL_CASE_CONVENTION.should.be.eql(PASCAL_CASE_CONVENTION);
+      mapper.SNAKE_CASE_CONVENTION.should.be.eql(SNAKE_CASE_CONVENTION);
     });
   });
 
