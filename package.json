@@ -1,12 +1,25 @@
 {
   "name": "node-mapper",
   "version": "0.0.1",
+  "scripts": {
+    "eslint": "eslint src/ tests/ index.js",
+    "tests": "nyc mocha --ui tdd --recursive /media/docs/Projects/Mapper/tests"
+  },
   "dependencies": {
     "lodash": "^4.17.4"
   },
   "devDependencies": {
+    "eslint": "^3.16.1",
+    "ghooks": "^2.0.0",
     "mocha": "^3.2.0",
+    "nyc": "^10.1.2",
     "should": "^11.2.0",
     "sinon": "^1.17.7"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run eslint",
+      "pre-push": "npm run eslint && npm run tests"
+    }
   }
 }

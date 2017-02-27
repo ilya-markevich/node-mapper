@@ -2,8 +2,8 @@
 
 require('should');
 
-const { SNAKE_CASE_CONVENTION } = require('../../fieldConventions/constants');
-const SnakeCaseConvention = require('../../fieldConventions/snakeCase');
+const { SNAKE_CASE_CONVENTION } = require('../../src/fieldConventions/constants');
+const SnakeCaseConvention = require('../../src/fieldConventions/snakeCase');
 
 const generateTests = require('./testsGenerator');
 const { testFields } = require('../data/conventions/snakeCase');

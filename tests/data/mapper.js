@@ -17,7 +17,9 @@ const incorrectDestType = Array;
 
 const mapMethodName = 'makeTest';
 const mapInstance = {
-  map() {}
+  map() {
+    return 'test';
+  }
 };
 const mapSourceType = Object;
 const mapDestType = Object;

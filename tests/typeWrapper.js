@@ -2,7 +2,7 @@
 
 require('should');
 
-const TypeWrapper = require('../typeWrapper');
+const TypeWrapper = require('../src/typeWrapper');
 const testData = require('./data/typeWrapper');
 
 describe('Type Wrapper', () => {

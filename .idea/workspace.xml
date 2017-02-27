@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1468efc-91d2-40fc-b1fb-ae0c17a58dbc" name="Default" comment="" />
+    <list default="true" id="f1468efc-91d2-40fc-b1fb-ae0c17a58dbc" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fieldConventions/camelCase.js" afterPath="$PROJECT_DIR$/src/fieldConventions/camelCase.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fieldConventions/constants.js" afterPath="$PROJECT_DIR$/src/fieldConventions/constants.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fieldConventions/conventionsFactory.js" afterPath="$PROJECT_DIR$/src/fieldConventions/conventionsFactory.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fieldConventions/pascalCase.js" afterPath="$PROJECT_DIR$/src/fieldConventions/pascalCase.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fieldConventions/snakeCase.js" afterPath="$PROJECT_DIR$/src/fieldConventions/snakeCase.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/mapInstance.js" afterPath="$PROJECT_DIR$/src/mapInstance.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/mapper.js" afterPath="$PROJECT_DIR$/src/mapper.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/typeWrapper.js" afterPath="$PROJECT_DIR$/src/typeWrapper.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Mapper.iml" afterPath="$PROJECT_DIR$/.idea/Mapper.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/conventions/camelCase.js" afterPath="$PROJECT_DIR$/tests/conventions/camelCase.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/conventions/conventionsFactory.js" afterPath="$PROJECT_DIR$/tests/conventions/conventionsFactory.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/conventions/pascalCase.js" afterPath="$PROJECT_DIR$/tests/conventions/pascalCase.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/conventions/snakeCase.js" afterPath="$PROJECT_DIR$/tests/conventions/snakeCase.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/data/mapper.js" afterPath="$PROJECT_DIR$/tests/data/mapper.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/data/typeWrapper.js" afterPath="$PROJECT_DIR$/tests/data/typeWrapper.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/mapper.js" afterPath="$PROJECT_DIR$/tests/mapper.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/typeWrapper.js" afterPath="$PROJECT_DIR$/tests/typeWrapper.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -16,13 +38,26 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Mapper" />
+  </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name=".nycrc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.nycrc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="5" lean-forward="true" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+            <state relative-caret-position="72">
+              <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -42,19 +77,34 @@
     <findStrings>
       <find>upperFirst</find>
       <find>throws</find>
+      <find>global</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/fieldConventions/constants.js" />
         <option value="$PROJECT_DIR$/typeWrapper.js" />
-        <option value="$PROJECT_DIR$/tests/data/typeWrapper.js" />
         <option value="$PROJECT_DIR$/tests/typeWrapper.js" />
         <option value="$PROJECT_DIR$/mapper.js" />
         <option value="$PROJECT_DIR$/tests/mapper.js" />
+        <option value="$PROJECT_DIR$/tests/conventions/camelCase.js" />
+        <option value="$PROJECT_DIR$/tests/conventions/conventionsFactory.js" />
+        <option value="$PROJECT_DIR$/tests/conventions/pascalCase.js" />
+        <option value="$PROJECT_DIR$/tests/conventions/snakeCase.js" />
         <option value="$PROJECT_DIR$/tests/data/mapper.js" />
+        <option value="$PROJECT_DIR$/tests/data/typeWrapper.js" />
+        <option value="$PROJECT_DIR$/src/typeWrapper.js" />
+        <option value="$PROJECT_DIR$/src/mapInstance.js" />
+        <option value="$PROJECT_DIR$/src/fieldConventions/camelCase.js" />
+        <option value="$PROJECT_DIR$/.eslintrc" />
+        <option value="$PROJECT_DIR$/src/mapper.js" />
+        <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/.nycrc" />
         <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
@@ -94,7 +144,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -110,23 +159,28 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
-    <property name="js.eslint.eslintPackage" value="" />
+    <property name="js.eslint.eslintPackage" value="$PROJECT_DIR$/node_modules/eslint" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/mapper.js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests" />
     <property name="JavaScriptPreferStrict" value="true" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="6.9.2" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///media/docs/Projects/Mapper/mapper.js" />
+    <property name="js.eslint.nodeInterpreter" value="project" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -174,6 +228,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -204,8 +264,9 @@
       <envs />
       <ui>tdd</ui>
       <extra-mocha-options />
-      <test-kind>TEST_FILE</test-kind>
-      <test-file>$PROJECT_DIR$/tests/mapper.js</test-file>
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory>$PROJECT_DIR$/tests</test-directory>
+      <recursive>true</recursive>
       <method />
     </configuration>
     <list size="1">
@@ -222,20 +283,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1488182188097</updated>
-      <workItem from="1488182189300" duration="7483000" />
+      <workItem from="1488182189300" duration="10299000" />
+      <workItem from="1488194764534" duration="184000" />
+      <workItem from="1488194960199" duration="466000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Tests - 2017.02.27 at 13h 18m 20s.xml">
-      <configuration name="Tests" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Tests - 2017.02.27 at 13h 19m 12s.xml">
-      <configuration name="Tests" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Tests - 2017.02.27 at 13h 20m 34s.xml">
-      <configuration name="Tests" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
     <history-entry file="Tests - 2017.02.27 at 13h 21m 00s.xml">
       <configuration name="Tests" configurationId="mocha-javascript-test-runner" />
     </history-entry>
@@ -257,30 +311,48 @@
     <history-entry file="Tests - 2017.02.27 at 13h 36m 58s.xml">
       <configuration name="Tests" configurationId="mocha-javascript-test-runner" />
     </history-entry>
+    <history-entry file="Tests - 2017.02.27 at 13h 58m 29s.xml">
+      <configuration name="Tests" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Tests - 2017.02.27 at 14h 01m 03s.xml">
+      <configuration name="Tests" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Tests - 2017.02.27 at 14h 09m 54s.xml">
+      <configuration name="Tests" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7483000" />
+    <option name="totallyTimeSpent" value="10949000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1920" height="1007" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24986821" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39956093" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24986821" sideWeight="0.49118388" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.501845" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24986821" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.56655663" sideWeight="0.49815497" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24986821" sideWeight="0.5088161" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39956093" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -319,15 +391,7 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/fieldConventions/camelCase.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fieldConventions/snakeCase.js">
+    <entry file="file://$PROJECT_DIR$/.nycrc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -335,7 +399,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fieldConventions/pascalCase.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.nycrc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -343,77 +414,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mapInstance.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/conventions/camelCase.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="32" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="16" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typeWrapper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-          <folding>
-            <element signature="n#!!block;n#constructor#0;n#TypeWrapper#0" expanded="false" />
-            <element signature="n#!!block;n#getFields#0;n#TypeWrapper#0" expanded="false" />
-            <element signature="n#!!block;n#getInstance#0;n#TypeWrapper#0" expanded="false" />
-            <element signature="n#!!block;n#hasProperty#0;n#TypeWrapper#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/data/typeWrapper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="27" column="18" lean-forward="false" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-          <folding>
-            <element signature="e#96#135#0" expanded="false" />
-            <element signature="n#!!block;n#CustomObjectConstructor#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/typeWrapper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="50" column="18" lean-forward="false" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
-          <folding>
-            <element signature="e#198#931#0" expanded="false" />
-            <element signature="e#274#520#0" expanded="false" />
-            <element signature="e#598#925#0" expanded="false" />
-            <element signature="e#966#1708#0" expanded="false" />
-            <element signature="e#1030#1227#0" expanded="false" />
-            <element signature="e#1315#1423#0" expanded="false" />
-            <element signature="e#1489#1702#0" expanded="false" />
-            <element signature="e#1745#2334#0" expanded="false" />
-            <element signature="e#2371#3139#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fieldConventions/constants.js">
+    <entry file="file://$PROJECT_DIR$/src/fieldConventions/constants.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fieldConventions/conventionsFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="2" lean-forward="false" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -421,7 +425,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="2325" column="5" lean-forward="true" selection-start-line="2325" selection-start-column="5" selection-end-line="2325" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -429,63 +432,157 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="32" lean-forward="true" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mapper.js">
+    <entry file="file://$PROJECT_DIR$/src/fieldConventions/snakeCase.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="23" column="38" lean-forward="false" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
-          <folding>
-            <element signature="n#!!block;n#constructor#0;n#Mapper#0" expanded="false" />
-            <element signature="n#!!block;n#generateType#0;n#Mapper#0" expanded="false" />
-            <element signature="n#!!block;n#registerConvention#0;n#Mapper#0" expanded="false" />
-            <element signature="n#!!block;n#CAMEL_CASE_CONVENTION#0;n#Mapper#0" expanded="false" />
-            <element signature="n#!!block;n#PASCAL_CONVENTION#0;n#Mapper#0" expanded="false" />
-            <element signature="n#!!block;n#SNAKE_CONVENTION#0;n#Mapper#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/data/mapper.js">
+    <entry file="file://$PROJECT_DIR$/src/fieldConventions/pascalCase.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fieldConventions/conventionsFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="2" lean-forward="false" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/mapper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="91" column="3" lean-forward="true" selection-start-line="91" selection-start-column="3" selection-end-line="91" selection-end-column="3" />
-          <folding>
-            <element signature="e#372#680#0" expanded="false" />
-            <element signature="e#724#1102#0" expanded="false" />
-            <element signature="e#773#1096#0" expanded="false" />
-            <element signature="e#1139#1497#0" expanded="false" />
-            <element signature="e#1182#1491#0" expanded="false" />
-            <element signature="e#1609#1864#0" expanded="false" />
-            <element signature="e#1945#2338#0" expanded="false" />
-            <element signature="e#2424#2831#0" expanded="false" />
-            <element signature="e#2875#3464#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="126">
+          <caret line="7" column="114" lean-forward="false" selection-start-line="7" selection-start-column="114" selection-end-line="7" selection-end-column="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/typeWrapper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="50" column="18" lean-forward="false" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/conventions/camelCase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/conventions/conventionsFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/conventions/pascalCase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="50" lean-forward="true" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/conventions/snakeCase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/conventions/testsGenerator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="54" lean-forward="false" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/data/typeWrapper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/data/mapper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mapInstance.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fieldConventions/camelCase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/typeWrapper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="52" lean-forward="false" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mapper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.nyc_output/2b71e8297ea2ccc1783eea212375157f.json" />
+    <entry file="file://$PROJECT_DIR$/.nyc_output/01994bf0fa091ee452db690b14180e3a.json" />
+    <entry file="file://$PROJECT_DIR$/.nyc_output/f92c314c4d722586505c96191fbc1bb9.json" />
+    <entry file="file://$PROJECT_DIR$/.nycrc">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="5" lean-forward="true" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+        <state relative-caret-position="72">
+          <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
           <folding />
         </state>
       </provider>

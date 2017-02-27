@@ -1,5 +1,7 @@
 'use strict';
 
+/* eslint no-new-func: "off" */
+
 const { upperFirst } = require('lodash');
 const { CAMEL_CASE_CONVENTION, PASCAL_CASE_CONVENTION, SNAKE_CASE_CONVENTION } = require('./fieldConventions/constants');
 

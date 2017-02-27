@@ -1,6 +1,6 @@
 'use strict';
 
-const CustomConstructor = function CustomConstructor() {};
+class CustomConstructor {}
 
 const simpleObject = {
   field1: 'test',

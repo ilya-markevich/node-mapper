@@ -2,8 +2,8 @@
 
 require('should');
 
-const { CAMEL_CASE_CONVENTION } = require('../../fieldConventions/constants');
-const CamelCaseConvention = require('../../fieldConventions/camelCase');
+const { CAMEL_CASE_CONVENTION } = require('../../src/fieldConventions/constants');
+const CamelCaseConvention = require('../../src/fieldConventions/camelCase');
 
 const generateTests = require('./testsGenerator');
 const { testFields } = require('../data/conventions/camelCase');
