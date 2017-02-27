@@ -9,35 +9,43 @@ const MapInstance = require('./mapInstance');
 const checkMapperArgs = Symbol('_checkMapperArgs');
 
 class Mapper {
-  register(convention, methodName, SourceType, DestType, cb) {
-    this[checkMapperArgs](convention, SourceType, DestType);
-
-    const mapInstance = new MapInstance(conventionsFactory.get(convention), SourceType, DestType, cb);
-
-    this[methodName] = mapInstance.map.bind(mapInstance);
+  constructor() {
+    this.conventionsFactory = conventionsFactory;
+    this.MapInstance = MapInstance;
   }
 
-  geneateType(typeName, fields) {
+  register(convention, methodName, SourceType, DestType, cb) {
+    const self = this;
+
+    self[checkMapperArgs](convention, SourceType, DestType);
+
+    const mapInstance = new self.MapInstance(conventionsFactory.get(convention), SourceType, DestType, cb);
+
+    this[methodName] = mapInstance.map.bind(mapInstance);
+    return mapInstance;
+  }
+
+  generateType(typeName, fields) {
     return new Function(`
       return function ${upperFirst(typeName)}() {
-        ${fields.map(field => `${field} = undefined;`).join('\n')}
+        ${fields.map(field => `this['${field}'] = undefined;`).join('\n')}
       }
     `)();
   }
 
-  static registerConvention(name, convention) {
-    conventionsFactory.register(name, convention);
+  registerConvention(name, convention) {
+    this.conventionsFactory.register(name, convention);
   }
 
-  static get CAMEL_CASE_CONVENTION() {
+  get CAMEL_CASE_CONVENTION() {
     return CAMEL_CASE_CONVENTION;
   }
 
-  static get PASCAL_CONVENTION() {
+  get PASCAL_CONVENTION() {
     return PASCAL_CASE_CONVENTION;
   }
 
-  static get SNAKE_CONVENTION() {
+  get SNAKE_CONVENTION() {
     return SNAKE_CASE_CONVENTION;
   }
 
@@ -46,7 +54,7 @@ class Mapper {
       String, Number, Boolean, Date, RegExp, Array
     ];
 
-    if (!conventionsFactory.has(convention)) {
+    if (!this.conventionsFactory.has(convention)) {
       throw new Error('Unsupported convention.');
     }
 
