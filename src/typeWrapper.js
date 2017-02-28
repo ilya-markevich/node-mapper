@@ -7,6 +7,10 @@ class TypeWrapper {
     this.isSimpleObject = Type === Object;
   }
 
+  getType() {
+    return this.type;
+  }
+
   getFields(value = {}) {
     const self = this;
 

@@ -39,6 +39,10 @@ class Mapper {
     this.conventionsFactory.register(name, convention);
   }
 
+  extendMap(methodName, implementation) {
+    this.MapInstance.prototype[methodName] = implementation;
+  }
+
   get CAMEL_CASE_CONVENTION() {
     return CAMEL_CASE_CONVENTION;
   }

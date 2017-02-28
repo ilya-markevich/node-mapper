@@ -66,6 +66,14 @@ describe('Type Wrapper', () => {
     });
   });
 
+  describe('#getType', () => {
+    it('should get type', () => {
+      const typeWrapper = new TypeWrapper(Object);
+
+      typeWrapper.getType().should.be.eql(Object);
+    });
+  });
+
   describe('#hasProperty', () => {
     it('should return true for simple object', () => {
       const { fieldInObject } = testData;

@@ -1,6 +1,11 @@
 'use strict';
 
 const newConventionName = 'test';
+const newMethodName = 'mapTest';
+
+function methodImplementation(value) {
+  return value.test;
+}
 
 class NewConvention {
   getField() {
@@ -35,5 +40,7 @@ module.exports = {
   mapMethodName,
   mapInstance,
   mapSourceType,
-  mapDestType
+  mapDestType,
+  newMethodName,
+  methodImplementation
 };

@@ -45,6 +45,16 @@ describe('Mapper', () => {
     });
   });
 
+  describe('#extendMap', () => {
+    it('should extend map with new method', () => {
+      const { newMethodName, methodImplementation } = testData;
+      const mapper = new Mapper();
+
+      mapper.extendMap(newMethodName, methodImplementation);
+      mapper.register(mapper.CAMEL_CASE_CONVENTION, 'test', Object, Object).should.have.property(newMethodName, methodImplementation);
+    });
+  });
+
   describe('#register', () => {
     it('should not register new map because convention is incorrect', () => {
       const { incorrectConvention } = testData;

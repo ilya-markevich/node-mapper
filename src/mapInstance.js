@@ -61,10 +61,10 @@ class MapInstance {
 
   [applyMap](value) {
     const self = this;
-    const { mapInfo, convertCb } = self;
+    const { mapInfo, convertCb, destType } = self;
 
     if (convertCb) {
-      return convertCb(value);
+      return convertCb(value, destType.getType());
     } else if (mapInfo.size > 0) {
       return self[applyCustomMap](value);
     } else {
