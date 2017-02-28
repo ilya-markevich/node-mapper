@@ -53,7 +53,7 @@ class MapInstance {
     const self = this;
 
     if (Array.isArray(value)) {
-      return value.map(self[applyMap]);
+      return value.map(v => self[applyMap](v));
     } else {
       return self[applyMap](value);
     }
@@ -77,16 +77,20 @@ class MapInstance {
     const destObj = destType.getInstance();
 
     mapInfo.forEach((action, field) => {
-      if (destObj.hasProperty(field)) {
+      if (action === null) {
+        delete destObj[field];
+      } else if (destType.hasProperty(field)) {
         destObj[field] = typeof action === 'string' ? value[action] : action(value);
       }
     });
 
     sourceType.getFields(value)
-      .filter(sourceField => !mapInfo.keys().includes(convention.getField(sourceField)))
+      .filter(sourceField => !mapInfo.has(convention.getField(sourceField)))
       .forEach((field) => {
-        if (destObj.hasProperty(field)) {
-          destObj[convention.getField(field)] = value[field];
+        const destField = convention.getField(field);
+
+        if (destType.hasProperty(destField)) {
+          destObj[destField] = value[field];
         }
       });
 
