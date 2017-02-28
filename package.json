@@ -1,9 +1,34 @@
 {
-  "name": "node-mapper",
-  "version": "0.0.1",
+  "name": "dee-mapper",
+  "author": {
+    "name": "Ilya Markevich",
+    "url": "https://github.com/ilya-markevich"
+  },
+  "version": "0.1.0",
+  "description": "Object to object mapper",
+  "keywords": [
+    "mapper",
+    "map",
+    "obj",
+    "object"
+  ],
+  "bugs": "https://github.com/ilya-markevich/node-mapper/issues",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/ilya-markevich/node-mapper"
+  },
+  "homepage": "https://github.com/ilya-markevich/node-mapper#readme",
   "scripts": {
     "eslint": "eslint src/ tests/ index.js",
     "tests": "nyc mocha --ui tdd --recursive /media/docs/Projects/Mapper/tests"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run eslint",
+      "pre-push": "npm run eslint && npm run tests"
+    }
   },
   "dependencies": {
     "lodash": "^4.17.4"
@@ -16,10 +41,7 @@
     "should": "^11.2.0",
     "sinon": "^1.17.7"
   },
-  "config": {
-    "ghooks": {
-      "pre-commit": "npm run eslint",
-      "pre-push": "npm run eslint && npm run tests"
-    }
+  "engines": {
+    "node" : ">=6.0.0"
   }
 }
