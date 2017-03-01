@@ -37,7 +37,7 @@ To use the mapper you need to accomplish 3 simple steps:
 2) Register new mapping.
 
 * Specify [fields convention](#conventions), mapping method name,
-[source](##source-and-destination-types) object type, [destination](##source-and-destination-types) object type
+[source](#source-and-destination-types) object type, [destination](#source-and-destination-types) object type
 and a configuration callback (optionally).
 Configuration callback is used for mapping customizations.
  
@@ -106,7 +106,7 @@ console.log(result instanceof Object); // true
 
 2) Simple -> Custom
 
-* only fields from source value converted by convention that's included in Custom type will be in a result.
+* only converted fields from source that's included in Custom type will be in a result.
 
 ```javascript
 const sourceType = Object;
@@ -132,7 +132,7 @@ console.log(result instanceof DestinationType); // true
 
 3) Custom -> Simple
 
-* only fields from source value that's included in source custom type will be in a result.
+* only fields from source value that's included in source custom type will be converted and added in a result.
 
 ```javascript
 class SourceType {
@@ -158,7 +158,8 @@ console.log(result instanceof Object); // true
 
 4) Custom -> Custom
 
-* only fields from source value that's included in source type will be in a result.
+* only fields from source value that's included in source type will be converted.
+Converted fields will be added in a result only if there are included in destination type.
 
 ```javascript
 class SourceType {
@@ -220,7 +221,7 @@ Args:
 * `typeName [String]`: type name.
 * `fields Array([String])`: array of fields that will be created for the type.
 
-Returns: custom type function constructor
+Returns: custom type function constructor.
 
 ### `mapper.registerConvention(conventionName, ConventionImplementation)`   
 Register new field convention. See [conventions](#conventions) for more details.
