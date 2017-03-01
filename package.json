@@ -22,7 +22,7 @@
   "homepage": "https://github.com/ilya-markevich/node-mapper#readme",
   "scripts": {
     "eslint": "eslint src/ tests/ index.js",
-    "tests": "nyc mocha --ui tdd --recursive /media/docs/Projects/Mapper/tests"
+    "tests": "nyc mocha --ui tdd --recursive tests"
   },
   "config": {
     "ghooks": {
