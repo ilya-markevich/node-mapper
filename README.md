@@ -16,6 +16,7 @@
     + [`mapping.mapField()`](#mappingmapfielddestfieldname-sourcefieldnameorcallback)
     + [`mapping.mapFieldByPath()`](#mappingmapfieldbypathdestfieldname-pathinsourceobj)
     + [`mapping.ignoreField()`](#mappingignorefielddestfieldname)
+    + [`mapping.convert()`](#mappingconvertconvertcb)
 * [What's in a name?](#whats-in-a-name)
 * [Author](#author)
 
@@ -336,6 +337,34 @@ const result = mapper.testMap({
 });
 
 console.log(result); //{ field_1: 'test1' }
+```
+
+### `mapping.convert(convertCb)`
+Use custom converter for mapping.
+
+Args:
+
+* `convertCb [Function]`: function that makes mapping. The function get single parameter - source value.
+
+```javascript
+const sourceType = Object;
+const destinationType = Object;
+
+mapper.register(mapper.SNAKE_CASE_CONVENTION, 'testMap', sourceType, destinationType, (map) => {
+  map.convert((obj) => {
+    return {
+       newField1: obj.field1,
+       newField2: obj.field2
+    };
+  });
+});
+
+const result = mapper.testMap({
+  field1: 'test1',
+  field2: 'test2'
+});
+
+console.log(result); //{ newField1: 'test1', newField2: 'test2' }
 ```
 
 # What's in a name?

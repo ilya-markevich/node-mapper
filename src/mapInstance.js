@@ -55,7 +55,7 @@ class MapInstance {
     if (Array.isArray(value)) {
       return value.map(v => self[applyMap](v));
     } else {
-      return self[applyMap](value);
+      return self[applyMap](Object(value));
     }
   }
 
