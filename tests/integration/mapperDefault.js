@@ -6,12 +6,12 @@ const Mapper = require('../../src/mapper');
 const testData = require('./data/mapperDefault');
 
 describe('Mapper with default behaviour', () => {
-  it('should correctly map null to empty object', () => {
+  it('should correctly map null to null', () => {
     const { SourceSimpleType, DestSimpleType, methodName } = testData;
     const mapper = new Mapper();
 
     mapper.register(mapper.SNAKE_CASE_CONVENTION, methodName, SourceSimpleType, DestSimpleType);
-    mapper[methodName](null).should.be.eql({});
+    (mapper[methodName](null) === null).should.be.eql(true);
   });
 
   it('should use new map with default behaviour (Simple Type to Simple Type)', () => {
