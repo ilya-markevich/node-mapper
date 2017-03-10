@@ -1,13 +1,9 @@
 'use strict';
 
-const { get } = require('lodash');
-const TypeWrapper = require('./typeWrapper');
+const { get, groupBy } = require('lodash');
+const TypeWrapper = require('../typeWrapper');
 
-const applyMap = Symbol('_applyMap');
-const applyCustomMap = Symbol('_applyCustomMap');
-const applyDefaultMap = Symbol('_applyDefaultMap');
-
-class MapInstance {
+class BaseMapInstance {
   constructor(convention, SourceType, DestType, configCb) {
     this.sourceType = new TypeWrapper(SourceType);
     this.destType = new TypeWrapper(DestType);
@@ -49,57 +45,20 @@ class MapInstance {
     self.convertCb = cb;
   }
 
-  map(value) {
-    const self = this;
-
-    if (Array.isArray(value)) {
-      return value.map(v => self[applyMap](v));
-    } else if (value) {
-      return self[applyMap](value);
-    } else {
-      return null;
-    }
-  }
-
-  [applyMap](value) {
+  _applyMap(value) {
     const self = this;
     const { mapInfo, convertCb, destType } = self;
 
     if (convertCb) {
       return convertCb(value, destType.getType());
     } else if (mapInfo.size > 0) {
-      return self[applyCustomMap](value);
+      return self._applyCustomMap(value);
     } else {
-      return self[applyDefaultMap](value);
+      return self._applyDefaultMap(value);
     }
   }
 
-  [applyCustomMap](value) {
-    const { mapInfo, convention, sourceType, destType } = this;
-    const destObj = destType.getInstance();
-
-    mapInfo.forEach((action, field) => {
-      if (action === null) {
-        delete destObj[field];
-      } else if (destType.hasProperty(field)) {
-        destObj[field] = typeof action === 'string' ? value[action] : action(value);
-      }
-    });
-
-    sourceType.getFields(value)
-      .filter(sourceField => !mapInfo.has(convention.getField(sourceField)))
-      .forEach((field) => {
-        const destField = convention.getField(field);
-
-        if (destType.hasProperty(destField)) {
-          destObj[destField] = value[field];
-        }
-      });
-
-    return destObj;
-  }
-
-  [applyDefaultMap](value) {
+  _applyDefaultMap(value) {
     const { destType, sourceType, convention } = this;
 
     const destObj = destType.getInstance();
@@ -115,6 +74,39 @@ class MapInstance {
 
     return destObj;
   }
+
+  _applyCustomMap(value) {
+    const self = this;
+    const { mapInfo, convention, sourceType, destType } = self;
+    const destObj = destType.getInstance();
+    const { ignoreMappings = [], customFieldMappings = [], customMappings = [] } = groupBy([...mapInfo], ([, action]) => {
+      if (action === null) {
+        return 'ignoreMappings';
+      } else if (typeof action === 'string') {
+        return 'customFieldMappings';
+      } else {
+        return 'customMappings';
+      }
+    });
+
+    ignoreMappings.forEach(([field]) => delete destObj[field]);
+
+    customFieldMappings.forEach(([field, action]) => {
+      destObj[field] = value[action];
+    });
+
+    sourceType.getFields(value)
+      .filter(sourceField => !mapInfo.has(convention.getField(sourceField)))
+      .forEach((field) => {
+        const destField = convention.getField(field);
+
+        if (destType.hasProperty(destField)) {
+          destObj[destField] = value[field];
+        }
+      });
+
+    return self._applyCustomMappings(value, destObj, customMappings);
+  }
 }
 
-module.exports = MapInstance;
+module.exports = BaseMapInstance;

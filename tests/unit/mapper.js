@@ -64,6 +64,13 @@ describe('Mapper', () => {
       mapper.register.bind(mapper, incorrectConvention).should.throw('Unsupported convention.');
     });
 
+    it('should not register new map because method name is not specified', () => {
+      const mapper = new Mapper();
+
+      mapper.conventionsFactory.has = sinon.stub().returns(true);
+      mapper.register.bind(mapper, mapper.CAMEL_CASE_CONVENTION).should.throw('Method name should be specified.');
+    });
+
     it('should not register new map because Source Type is incorrect', () => {
       const { mapMethodName, incorrectSourceType } = testData;
       const mapper = new Mapper();

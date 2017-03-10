@@ -5,7 +5,7 @@ require('should');
 const sinon = require('sinon');
 
 const TypeWrapper = require('../../src/typeWrapper');
-const MapInstance = require('../../src/mapInstance');
+const MapInstance = require('../../src/mapInstances/mapInstance');
 
 const testData = require('./data/mapInstance');
 
