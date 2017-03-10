@@ -13,7 +13,7 @@ class AsyncMapInstance extends BaseMapInstance {
     if (Array.isArray(value)) {
       return Promise.all(value.map(v => self._applyMap(v)));
     } else if (value) {
-      return self._applyMap(value);
+      return Promise.resolve(self._applyMap(value));
     } else {
       return Promise.resolve(null);
     }
