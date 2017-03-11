@@ -1,7 +1,7 @@
 # Dee Mapper
 [![npm](https://img.shields.io/npm/v/dee-mapper.svg?maxAge=1000)](https://www.npmjs.com/package/dee-mapper)
 [![npm](https://img.shields.io/npm/dt/dee-mapper.svg?maxAge=1000)](https://www.npmjs.com/package/dee-mapper)
-[![Coveralls](https://img.shields.io/coveralls/ilya-markevich/node-mapper.svg?maxAge=1000)](https://coveralls.io/github/ilya-markevich/node-mapper)
+[![Coverage Status](https://coveralls.io/repos/github/ilya-markevich/node-mapper/badge.svg?branch=master)](https://coveralls.io/github/ilya-markevich/node-mapper?branch=master)
 [![dependency Status](https://img.shields.io/david/ilya-markevich/node-mapper.svg?maxAge=1000)](https://david-dm.org/ilya-markevich/node-mapper)
 [![devDependency Status](https://img.shields.io/david/dev/ilya-markevich/node-mapper.svg?maxAge=1000)](https://david-dm.org/ilya-markevich/node-mapper?type=dev)
 [![Build Status](https://img.shields.io/travis/ilya-markevich/node-mapper.svg?maxAge=1000)](https://travis-ci.org/ilya-markevich/node-mapper)
