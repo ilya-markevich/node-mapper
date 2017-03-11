@@ -1,7 +1,10 @@
 # Dee Mapper
 [![npm](https://img.shields.io/npm/v/dee-mapper.svg?maxAge=1000)](https://www.npmjs.com/package/dee-mapper)
 [![npm](https://img.shields.io/npm/dt/dee-mapper.svg?maxAge=1000)](https://www.npmjs.com/package/dee-mapper)
-[![node](https://img.shields.io/node/v/dee-mapper?maxAge=1000)](https://www.npmjs.com/package/dee-mapper)
+[![dependency Status](https://img.shields.io/david/ilya-markevich/node-mapper.svg?maxAge=1000)](https://david-dm.org/ilya-markevich/node-mapper)
+[![devDependency Status](https://img.shields.io/david/dev/ilya-markevich/node-mapper.svg?maxAge=1000)](https://david-dm.org/ilya-markevich/node-mapper?type=dev)
+[![Build Status](https://img.shields.io/travis/ilya-markevich/node-mapper.svg?maxAge=1000)](https://travis-ci.org/ilya-markevich/node-mapper)
+[![node](https://img.shields.io/node/v/dee-mapper.svg?maxAge=1000)](https://www.npmjs.com/package/dee-mapper)
 
 Object to Object mapper for NodeJS.
 

@@ -1,0 +1,5 @@
+language: node_js
+node:
+  - "6.x"
+
+before_script: npm run eslint && npm run tests
