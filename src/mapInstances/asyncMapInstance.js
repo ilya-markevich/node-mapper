@@ -24,7 +24,7 @@ class AsyncMapInstance extends BaseMapInstance {
 
     return customMappings.reduce((result, [field, action]) => {
       if (destType.hasProperty(field)) {
-        return result.then(action(value)).then((value) => {
+        return result.then(() => action(value)).then((value) => {
           destObj[field] = value;
         });
       } else {

@@ -5,7 +5,7 @@ require('should');
 const sinon = require('sinon');
 
 const TypeWrapper = require('../../src/typeWrapper');
-const MapInstance = require('../../src/mapInstances/mapInstance');
+const MapInstance = require('../../src/mapInstances/base');
 
 const testData = require('./data/mapInstance');
 
@@ -17,7 +17,7 @@ function checkInitialState(mapInstance, convention) {
   (mapInstance.convertCb === null).should.be.eql(true);
 }
 
-describe('Map Instance', () => {
+describe('Base Map Instance', () => {
   describe('Initial state', () => {
     it('should set correct initial state with passed callback', () => {
       const { sourceType, destType, convention } = testData;

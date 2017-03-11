@@ -5,12 +5,18 @@ require('should');
 const Mapper = require('../../src/mapper');
 const testData = require('./data/mapperCustomConverter');
 
-describe('Mapper with custom converter', () => {
-  it('should use new map with custom converter', () => {
-    const { SourceSimpleType, DestSimpleType, sourceSimpleObject, expectedDestSimpleToSimpleObject, methodName } = testData;
+const { checkResult, checkNullResult } = require('../helpers/integration/resultChecker');
+
+function generateMapperCustomConverterTests(isAsync) {
+  const { methodName } = testData;
+  const fullMethodName = isAsync ? `${methodName}Async` : methodName;
+  const testsPrefix = isAsync ? '- async' : '';
+
+  it(`should use new map with custom converter ${testsPrefix}`, () => {
+    const { SourceSimpleType, DestSimpleType, sourceSimpleObject, expectedDestSimpleToSimpleObject } = testData;
     const mapper = new Mapper();
 
-    mapper.register(mapper.SNAKE_CASE_CONVENTION, methodName, SourceSimpleType, DestSimpleType, (map) => {
+    mapper.register(mapper.SNAKE_CASE_CONVENTION, fullMethodName, SourceSimpleType, DestSimpleType, (map) => {
       map.convert((value) => {
         return {
           result_1: value.field1,
@@ -19,19 +25,25 @@ describe('Mapper with custom converter', () => {
       });
     });
 
-    mapper[methodName](sourceSimpleObject).should.be.eql(expectedDestSimpleToSimpleObject);
+    return checkResult(testData, mapper[fullMethodName](sourceSimpleObject), expectedDestSimpleToSimpleObject, false, isAsync);
   });
 
-  it('should use new map with custom converter and null value', () => {
-    const { SourceSimpleType, DestSimpleType, sourceSimpleObject, methodName } = testData;
+  it(`should use new map with custom converter and null value ${testsPrefix}`, () => {
+    const { SourceSimpleType, DestSimpleType, sourceSimpleObject } = testData;
     const mapper = new Mapper();
 
-    mapper.register(mapper.SNAKE_CASE_CONVENTION, methodName, SourceSimpleType, DestSimpleType, (map) => {
+    mapper.register(mapper.SNAKE_CASE_CONVENTION, fullMethodName, SourceSimpleType, DestSimpleType, (map) => {
       map.convert(() => {
         return null;
       });
     });
 
-    (mapper[methodName](sourceSimpleObject) === null).should.be.eql(true);
+    return checkNullResult(mapper[fullMethodName](sourceSimpleObject), isAsync);
   });
+}
+
+describe('Mapper with custom converter', () => {
+  generateMapperCustomConverterTests(false);
+
+  generateMapperCustomConverterTests(true);
 });

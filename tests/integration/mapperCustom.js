@@ -5,55 +5,85 @@ require('should');
 const Mapper = require('../../src/mapper');
 const testData = require('./data/mapperCustom');
 
-describe('Mapper with custom map', () => {
-  it('should use new map with custom behaviour (Simple Type to Simple Type)', () => {
-    const { SourceSimpleType, DestSimpleType, sourceSimpleObject, expectedDestSimpleToSimpleObject, methodName } = testData;
+const { checkResult } = require('../helpers/integration/resultChecker');
+
+function resultToPromise(result, isPromisify) {
+  if (isPromisify) {
+    return Promise.resolve(result);
+  } else {
+    return result;
+  }
+}
+
+function generateMapperCustomTests(isAsync) {
+  const { methodName } = testData;
+  const fullMethodName = isAsync ? `${methodName}Async` : methodName;
+  const testsPrefix = isAsync ? '- async' : '';
+
+  it(`should use array new map with custom behaviour (Simple Type to Simple Type) ${testsPrefix}`, () => {
+    const { SourceSimpleType, DestSimpleType, sourceSimpleObject, expectedDestSimpleToSimpleObject } = testData;
     const mapper = new Mapper();
 
-    mapper.register(mapper.SNAKE_CASE_CONVENTION, methodName, SourceSimpleType, DestSimpleType, (map) => {
+    mapper.register(mapper.SNAKE_CASE_CONVENTION, fullMethodName, SourceSimpleType, DestSimpleType, (map) => {
       map.ignoreField('field_3')
-        .mapField('field_2', obj => obj.field2.toUpperCase())
+        .mapField('field_2', obj => resultToPromise(obj.field2.toUpperCase(), isAsync))
         .mapFieldByPath('field_1', 'field1');
     });
 
-    mapper[methodName](sourceSimpleObject).should.be.eql(expectedDestSimpleToSimpleObject);
-    mapper[methodName]([sourceSimpleObject]).should.be.eql([expectedDestSimpleToSimpleObject]);
+    return checkResult(testData, mapper[fullMethodName]([sourceSimpleObject]), [expectedDestSimpleToSimpleObject], false, isAsync);
   });
 
-  it('should use new map with default behaviour (Simple Type to Custom Type)', () => {
-    const { SourceSimpleType, DestCustomType, sourceSimpleObject, expectedDestSimpleToCustomObject, methodName } = testData;
+  it(`should use new map with custom behaviour (Simple Type to Simple Type) ${testsPrefix}`, () => {
+    const { SourceSimpleType, DestSimpleType, sourceSimpleObject, expectedDestSimpleToSimpleObject } = testData;
     const mapper = new Mapper();
 
-    mapper.register(mapper.SNAKE_CASE_CONVENTION, methodName, SourceSimpleType, DestCustomType, (map) => {
-      map.mapField('field_2', obj => obj.field2.substring(0, 1))
-        .mapField('field_test', 'fieldTest');
+    mapper.register(mapper.SNAKE_CASE_CONVENTION, fullMethodName, SourceSimpleType, DestSimpleType, (map) => {
+      map.ignoreField('field_3')
+        .mapField('field_2', obj => resultToPromise(obj.field2.toUpperCase(), isAsync))
+        .mapFieldByPath('field_1', 'field1');
     });
-    const mapResult = mapper[methodName](sourceSimpleObject);
 
-    mapResult.should.have.properties(expectedDestSimpleToCustomObject);
-    (mapResult instanceof DestCustomType).should.be.eql(true);
+    return checkResult(testData, mapper[fullMethodName](sourceSimpleObject), expectedDestSimpleToSimpleObject, false, isAsync);
   });
 
-  it('should use new map with default behaviour (Custom Type to Simple Type)', () => {
-    const { SourceCustomType, DestSimpleType, sourceCustomObject, expectedDestCustomToSimpleObject, methodName } = testData;
+  it(`should use new map with default behaviour (Simple Type to Custom Type) ${testsPrefix}`, () => {
+    const { SourceSimpleType, DestCustomType, sourceSimpleObject, expectedDestSimpleToCustomObject } = testData;
     const mapper = new Mapper();
 
-    mapper.register(mapper.SNAKE_CASE_CONVENTION, methodName, SourceCustomType, DestSimpleType, (map) => {
+    mapper.register(mapper.SNAKE_CASE_CONVENTION, fullMethodName, SourceSimpleType, DestCustomType, (map) => {
+      map.mapField('field_2', obj => resultToPromise(obj.field2.substring(0, 1), isAsync))
+        .mapField('field_test', 'fieldTest')
+        .mapFieldByPath('field_test2', 'fieldTest2');
+    });
+
+    return checkResult(testData, mapper[fullMethodName](sourceSimpleObject), expectedDestSimpleToCustomObject, true, isAsync);
+  });
+
+  it(`should use new map with default behaviour (Custom Type to Simple Type) ${testsPrefix}`, () => {
+    const { SourceCustomType, DestSimpleType, sourceCustomObject, expectedDestCustomToSimpleObject } = testData;
+    const mapper = new Mapper();
+
+    mapper.register(mapper.SNAKE_CASE_CONVENTION, fullMethodName, SourceCustomType, DestSimpleType, (map) => {
       map.mapField('test', 'test');
     });
-    mapper[methodName](sourceCustomObject).should.have.properties(expectedDestCustomToSimpleObject);
+
+    return checkResult(testData, mapper[fullMethodName](sourceCustomObject), expectedDestCustomToSimpleObject, false, isAsync);
   });
 
-  it('should use new map with default behaviour (Custom Type to Custom Type)', () => {
-    const { SourceCustomType, DestCustomType, sourceCustomObject, expectedDestCustomToCustomObject, methodName } = testData;
+  it(`should use new map with default behaviour (Custom Type to Custom Type) ${testsPrefix}`, () => {
+    const { SourceCustomType, DestCustomType, sourceCustomObject, expectedDestCustomToCustomObject } = testData;
     const mapper = new Mapper();
 
-    mapper.register(mapper.SNAKE_CASE_CONVENTION, methodName, SourceCustomType, DestCustomType, (map) => {
-      map.mapField('field_2', obj => obj.field2.toUpperCase());
+    mapper.register(mapper.SNAKE_CASE_CONVENTION, fullMethodName, SourceCustomType, DestCustomType, (map) => {
+      map.mapField('field_2', obj => resultToPromise(obj.field2.toUpperCase(), isAsync));
     });
-    const mapResult = mapper[methodName](sourceCustomObject);
 
-    mapResult.should.have.properties(expectedDestCustomToCustomObject);
-    (mapResult instanceof DestCustomType).should.be.eql(true);
+    return checkResult(testData, mapper[fullMethodName](sourceCustomObject), expectedDestCustomToCustomObject, true, isAsync);
   });
+}
+
+describe('Mapper with custom map', () => {
+  generateMapperCustomTests(false);
+
+  generateMapperCustomTests(true);
 });

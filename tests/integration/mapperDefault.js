@@ -5,25 +5,7 @@ require('should');
 const Mapper = require('../../src/mapper');
 const testData = require('./data/mapperDefault');
 
-function checkResult(result, expectedResult, isTypeCheck, isAsync) {
-  function checkType(result, isTypeCheck) {
-    if (isTypeCheck) {
-      const { DestCustomType } = testData;
-
-      (result instanceof DestCustomType).should.be.eql(true);
-    }
-  }
-
-  if (isAsync) {
-    return result.then((actualResult) => {
-      actualResult.should.have.properties(expectedResult);
-      checkType(actualResult, isTypeCheck);
-    });
-  } else {
-    result.should.have.properties(expectedResult);
-    checkType(result, isTypeCheck);
-  }
-}
+const { checkResult, checkNullResult } = require('../helpers/integration/resultChecker');
 
 function generateMapperDefaultTests(isAsync) {
   const { methodName } = testData;
@@ -35,14 +17,7 @@ function generateMapperDefaultTests(isAsync) {
     const mapper = new Mapper();
 
     mapper.register(mapper.SNAKE_CASE_CONVENTION, fullMethodName, SourceSimpleType, DestSimpleType);
-
-    if (isAsync) {
-      return mapper[fullMethodName](null).then((actualResult) => {
-        (actualResult === null).should.be.eql(true);
-      });
-    } else {
-      (mapper[fullMethodName](null) === null).should.be.eql(true);
-    }
+    return checkNullResult(mapper[fullMethodName](null), isAsync);
   });
 
   it(`should use new map with default behaviour (Simple Type to Simple Type) ${testsPrefix}`, () => {
@@ -50,7 +25,7 @@ function generateMapperDefaultTests(isAsync) {
     const mapper = new Mapper();
 
     mapper.register(mapper.SNAKE_CASE_CONVENTION, fullMethodName, SourceSimpleType, DestSimpleType);
-    return checkResult(mapper[fullMethodName](sourceSimpleObject), expectedDestSimpleToSimpleObject, false, isAsync);
+    return checkResult(testData, mapper[fullMethodName](sourceSimpleObject), expectedDestSimpleToSimpleObject, false, isAsync);
   });
 
   it(`should use new map with default behaviour (Simple Type to Custom Type) ${testsPrefix}`, () => {
@@ -58,7 +33,7 @@ function generateMapperDefaultTests(isAsync) {
     const mapper = new Mapper();
 
     mapper.register(mapper.SNAKE_CASE_CONVENTION, fullMethodName, SourceSimpleType, DestCustomType);
-    return checkResult(mapper[fullMethodName](sourceSimpleObject), expectedDestSimpleToCustomObject, true, isAsync);
+    return checkResult(testData, mapper[fullMethodName](sourceSimpleObject), expectedDestSimpleToCustomObject, true, isAsync);
   });
 
   it(`should use new map with default behaviour (Custom Type to Simple Type) ${testsPrefix}`, () => {
@@ -66,7 +41,7 @@ function generateMapperDefaultTests(isAsync) {
     const mapper = new Mapper();
 
     mapper.register(mapper.SNAKE_CASE_CONVENTION, fullMethodName, SourceCustomType, DestSimpleType);
-    return checkResult(mapper[fullMethodName](sourceCustomObject), expectedDestCustomToSimpleObject, false, isAsync);
+    return checkResult(testData, mapper[fullMethodName](sourceCustomObject), expectedDestCustomToSimpleObject, false, isAsync);
   });
 
   it(`should use new map with default behaviour (Custom Type to Custom Type) ${testsPrefix}`, () => {
@@ -74,7 +49,7 @@ function generateMapperDefaultTests(isAsync) {
     const mapper = new Mapper();
 
     mapper.register(mapper.SNAKE_CASE_CONVENTION, fullMethodName, SourceCustomType, DestCustomType);
-    return checkResult(mapper[fullMethodName](sourceCustomObject), expectedDestCustomToCustomObject, true, isAsync);
+    return checkResult(testData, mapper[fullMethodName](sourceCustomObject), expectedDestCustomToCustomObject, true, isAsync);
   });
 }
 
