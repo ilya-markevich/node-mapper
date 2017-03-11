@@ -16,32 +16,28 @@
   "license": "MIT",
   "main": "index.js",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/ilya-markevich/node-mapper"
+    "type": "git",
+    "url": "https://github.com/ilya-markevich/node-mapper"
   },
   "homepage": "https://github.com/ilya-markevich/node-mapper#readme",
   "scripts": {
     "eslint": "eslint src/ tests/ index.js",
-    "tests": "nyc mocha --ui tdd --recursive tests"
-  },
-  "config": {
-    "ghooks": {
-      "pre-commit": "npm run eslint",
-      "pre-push": "npm run eslint && npm run tests"
-    }
+    "test": "nyc mocha --ui tdd --recursive tests",
+    "precommit": "npm run eslint",
+    "prepush": "npm run test"
   },
   "dependencies": {
     "lodash": "^4.17.4"
   },
   "devDependencies": {
     "eslint": "^3.16.1",
-    "ghooks": "^2.0.0",
+    "husky": "^0.13.2",
     "mocha": "^3.2.0",
     "nyc": "^10.1.2",
     "should": "^11.2.0",
     "sinon": "^1.17.7"
   },
   "engines": {
-    "node" : ">=6.0.0"
+    "node": ">=6.0.0"
   }
 }
