@@ -1,3 +1,10 @@
+# Dee Mapper
+[![npm](https://img.shields.io/npm/v/dee-mapper.svg?maxAge=1000)](https://www.npmjs.com/package/dee-mapper)
+[![npm](https://img.shields.io/npm/dt/dee-mapper.svg?maxAge=1000)](https://www.npmjs.com/package/dee-mapper)
+[![node](https://img.shields.io/node/v/dee-mapper?maxAge=1000)](https://www.npmjs.com/package/dee-mapper)
+
+Object to Object mapper for NodeJS.
+
 # Table of contents
 * [Installation](#installation)
 * [Usage](#usage)
@@ -17,6 +24,7 @@
     + [`mapping.mapFieldByPath()`](#mappingmapfieldbypathdestfieldname-pathinsourceobj)
     + [`mapping.ignoreField()`](#mappingignorefielddestfieldname)
     + [`mapping.convert()`](#mappingconvertconvertcb)
+* [Async mapping](#async-mapping)
 * [What's in a name?](#whats-in-a-name)
 * [Author](#author)
 
@@ -365,6 +373,30 @@ const result = mapper.testMap({
 });
 
 console.log(result); //{ newField1: 'test1', newField2: 'test2' }
+```
+
+# Async Mapping
+To make mapping async you should pass in [register](#mapperregisterconventionname-methodname-sourcetype-desttype-configcb) method name which ends with 'Async'.
+ 
+```javascript
+const sourceType = Object;
+const destinationType = Object;
+
+mapper.register(mapper.SNAKE_CASE_CONVENTION, 'testMapAsync', sourceType, destinationType, (map) => {
+  map.convert((obj) => {
+    return Promise.resolve({
+       newField1: obj.field1,
+       newField2: obj.field2
+    });
+  });
+});
+
+mapper.testMapAsync({
+  field1: 'test1',
+  field2: 'test2'
+}).then((result) => {
+  console.log(result); //{ newField1: 'test1', newField2: 'test2' }
+});
 ```
 
 # What's in a name?
