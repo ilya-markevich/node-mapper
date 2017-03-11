@@ -4,6 +4,7 @@
 [![dependency Status](https://img.shields.io/david/ilya-markevich/node-mapper.svg?maxAge=1000)](https://david-dm.org/ilya-markevich/node-mapper)
 [![devDependency Status](https://img.shields.io/david/dev/ilya-markevich/node-mapper.svg?maxAge=1000)](https://david-dm.org/ilya-markevich/node-mapper?type=dev)
 [![Build Status](https://img.shields.io/travis/ilya-markevich/node-mapper.svg?maxAge=1000)](https://travis-ci.org/ilya-markevich/node-mapper)
+[![Known Vulnerabilities](https://snyk.io/test/github/ilya-markevich/node-mapper/badge.svg)](https://snyk.io/test/github/ilya-markevich/node-mapper)
 [![node](https://img.shields.io/node/v/dee-mapper.svg?maxAge=1000)](https://www.npmjs.com/package/dee-mapper)
 
 Object to Object mapper for NodeJS.
