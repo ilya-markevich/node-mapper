@@ -3,3 +3,8 @@ tests
 coverage
 .idea
 npm-debug.log
+.eslintrc
+.gitignore
+.nycrc
+.travis.yml
+README.md

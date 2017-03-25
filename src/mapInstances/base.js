@@ -1,6 +1,6 @@
 'use strict';
 
-const { get, groupBy } = require('lodash');
+const get = require('get-value');
 const TypeWrapper = require('../typeWrapper');
 
 class BaseMapInstance {
@@ -79,13 +79,17 @@ class BaseMapInstance {
     const self = this;
     const { mapInfo, convention, sourceType, destType } = self;
     const destObj = destType.getInstance();
-    const { ignoreMappings = [], customFieldMappings = [], customMappings = [] } = groupBy([...mapInfo], ([, action]) => {
+    const ignoreMappings = [], customFieldMappings = [], customMappings = [];
+
+    [...mapInfo].forEach((info) => {
+      const action = info[1];
+
       if (action === null) {
-        return 'ignoreMappings';
+        ignoreMappings.push(info);
       } else if (typeof action === 'string') {
-        return 'customFieldMappings';
+        customFieldMappings.push(info);
       } else {
-        return 'customMappings';
+        customMappings.push(info);
       }
     });
 

@@ -29,7 +29,10 @@
     "coveralls": "npm run cover && nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
-    "lodash": "^4.17.4"
+    "camelcase": "^4.0.0",
+    "get-value": "^2.0.6",
+    "lodash.snakecase": "^4.1.1",
+    "upper-case-first": "^1.1.2"
   },
   "devDependencies": {
     "coveralls": "^2.12.0",

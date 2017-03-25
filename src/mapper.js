@@ -2,7 +2,7 @@
 
 /* eslint no-new-func: "off" */
 
-const { upperFirst } = require('lodash');
+const upperFirst = require('upper-case-first');
 const { CAMEL_CASE_CONVENTION, PASCAL_CASE_CONVENTION, SNAKE_CASE_CONVENTION } = require('./fieldConventions/constants');
 
 const conventionsFactory = require('./fieldConventions/conventionsFactory');

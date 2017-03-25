@@ -1,6 +1,6 @@
 'use strict';
 
-const { camelCase } = require('lodash');
+const camelCase = require('camelcase');
 const { CAMEL_CASE_CONVENTION } = require('./constants');
 
 class CamelConvention {

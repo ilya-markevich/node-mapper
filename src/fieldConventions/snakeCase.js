@@ -1,6 +1,6 @@
 'use strict';
 
-const { snakeCase } = require('lodash');
+const snakeCase = require('lodash.snakecase');
 const { SNAKE_CASE_CONVENTION } = require('./constants');
 
 class SnakeConvention {

@@ -303,7 +303,7 @@ console.log(result); //{ field_1: 'test4', field_2: 'TEST2' }
 ```
 
 ### `mapping.mapFieldByPath(destFieldName, pathInSourceObj)`
-Map destination field on source field by path.
+Map destination field on source field by path. (see [get-value](https://github.com/jonschlinkert/get-value) for path variants.)
 
 Args:
 

@@ -1,6 +1,7 @@
 'use strict';
 
-const { camelCase, upperFirst } = require('lodash');
+const upperFirst = require('upper-case-first');
+const camelCase = require('camelcase');
 const { PASCAL_CASE_CONVENTION } = require('./constants');
 
 class PascalConvention {
