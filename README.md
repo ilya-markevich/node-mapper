@@ -38,7 +38,7 @@ Object to Object mapper for NodeJS.
 ```
 npm install dee-mapper --save
 ```
-NodeJS >=6.0.0 required
+NodeJS >=6.0.0 is required.
 
 # Usage
 
@@ -52,7 +52,7 @@ To use the mapper you need to accomplish 3 simple steps:
 
 * Specify [fields convention](#conventions), mapping method name,
 [source](#source-and-destination-types) object type, [destination](#source-and-destination-types) object type
-and a configuration callback (optionally).
+and configuration callback (optionally).
 Configuration callback is used for mapping customizations.
  
 3) Call the method from step 2 on a mapper instance.
@@ -83,24 +83,24 @@ console.log(result); // { field_1: 'test1', field_2: 'TEST2' }
 ```
 
 # Conventions
-Conventions are responsible for converting by default field names of source object in appropriate field names of destination object.
+Conventions are responsible for converting field names of source object in appropriate field names of destination object.
 
-For example, snake case convention means that field with name 'firstName' in source object will be mapped by default to 'first_name' in destination object.
+For example, snake case convention means that field with name 'firstName' in source object will be mapped to 'first_name' field in destination object.
 Dee-mapper supports 3 types of conventions: [camel case](https://en.wikipedia.org/wiki/Camel_case), [pascal case](https://en.wikipedia.org/wiki/PascalCase) and [snake case](https://en.wikipedia.org/wiki/Snake_case).
 
 You can create custom conventions using method [registerConvention](#mapperregisterconventionconventionname-conventionimplementation).
 
 # Source and destination types
 
-For source and destination objects you can use simple types and custom types. Simple type is only one - Object.
-Custom types - all user defined types.
+You can use simple types and custom types for source and destination objects. There is only one simple type - Object.
+Custom types include all user defined types.
 
-Type can be constructor function or class. The result of mapping depends on types that you passed when configure the mapping.
-Here are the rules (in format source type -> destination type) that applied for mapping types:
+Type can be constructor function or class. The result of mapping depends on types that you used while configuring the mapping.
+Here are the rules (in format source type -> destination type) applied for types mapping:
 
 1) Simple -> Simple
  
-* all fields from source type will be converted by convention and mapped to destination type.
+* all fields from source type will be converted and mapped to destination type by convention.
 
 ```javascript
 const sourceType = Object;
@@ -120,7 +120,7 @@ console.log(result instanceof Object); // true
 
 2) Simple -> Custom
 
-* only converted fields from source that's included in Custom type will be in a result.
+* In a result there will be only converted fields from source value that are included in Custom type.
 
 ```javascript
 const sourceType = Object;
@@ -146,7 +146,7 @@ console.log(result instanceof DestinationType); // true
 
 3) Custom -> Simple
 
-* only fields from source value that's included in source custom type will be converted and added in a result.
+* only fields from source value that are included in source custom type will be converted and added to the result.
 
 ```javascript
 class SourceType {
@@ -172,8 +172,8 @@ console.log(result instanceof Object); // true
 
 4) Custom -> Custom
 
-* only fields from source value that's included in source type will be converted.
-Converted fields will be added in a result only if there are included in destination type.
+* only fields from source value that are included in source custom type will be converted.
+Converted fields will be added to the result only if they are included in destination type.
 
 ```javascript
 class SourceType {
@@ -220,7 +220,7 @@ Args:
 ### `mapper.generateType(typeName, fields)`
 Generates new custom type. Use the method as a helper if you don't want to write boilerplate code like:
        
-```javascript
+```javascript:
 function TypeName() {
     this.field1 = undefined;
     this.field2 = undefined;
@@ -263,7 +263,7 @@ Extend [mapping instance](#mapping-instance) with custom method.
 Args:
 
 * `methodName [String]`: name of the method.
-* `implementation [Function]`: function that takes as a parameter source object.
+* `implementation [Function]`: function that takes source object as a parameter.
 
 ### `mapper.CAMEL_CASE_CONVENTION`
 Constant for camel case convention. You don't have to implement the convention manually.
@@ -357,7 +357,7 @@ Use custom converter for mapping.
 
 Args:
 
-* `convertCb [Function]`: function that makes mapping. The function get single parameter - source value.
+* `convertCb [Function]`: function that makes mapping. The function takes single parameter - source value.
 
 ```javascript
 const sourceType = Object;
@@ -381,7 +381,7 @@ console.log(result); //{ newField1: 'test1', newField2: 'test2' }
 ```
 
 # Async Mapping
-To make mapping async you should pass in [register](#mapperregisterconventionname-methodname-sourcetype-desttype-configcb) method name which ends with 'Async'.
+To make mapping async you should pass name that ends with 'Async' in [register](#mapperregisterconventionname-methodname-sourcetype-desttype-configcb) method.
  
 ```javascript
 const sourceType = Object;
