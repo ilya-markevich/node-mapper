@@ -29,10 +29,9 @@ class Mapper {
     self[checkMapperArgs](convention, methodName, SourceType, DestType);
 
     const MapInstanceConstructor = self[getMapInstanceConstructor](methodName);
-    const mapInstance = new MapInstanceConstructor(conventionsFactory.get(convention), SourceType, DestType, cb);
+    const mapInstance = new MapInstanceConstructor(self.conventionsFactory.get(convention), SourceType, DestType, cb);
 
     this[methodName] = mapInstance.map.bind(mapInstance);
-    return mapInstance;
   }
 
   generateType(typeName, fields) {
