@@ -14,7 +14,7 @@
   ],
   "bugs": "https://github.com/ilya-markevich/node-mapper/issues",
   "license": "MIT",
-  "main": "index.js",
+  "main": "src/mapper.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ilya-markevich/node-mapper"
@@ -22,7 +22,7 @@
   "homepage": "https://github.com/ilya-markevich/node-mapper#readme",
   "scripts": {
     "eslint": "eslint src/ tests/ index.js",
-    "test": "mocha --ui tdd --recursive tests",
+    "test": "tsc && mocha --ui tdd --recursive tests",
     "cover": "nyc npm test",
     "precommit": "npm run eslint",
     "prepush": "npm run cover",
@@ -42,7 +42,8 @@
     "mocha-lcov-reporter": "^1.3.0",
     "nyc": "^10.1.2",
     "should": "^11.2.0",
-    "sinon": "^2.1.0"
+    "sinon": "^2.1.0",
+    "typescript": "^2.2.2"
   },
   "engines": {
     "node": ">=6.0.0"

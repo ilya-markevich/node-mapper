@@ -1,14 +1,20 @@
 {
   "compilerOptions": {
+    "alwaysStrict": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
     "module": "commonjs",
-    "target": "es6",
-    "sourceMap": false,
-    "outDir": "tsTests"
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "removeComments": true,
+    "strictNullChecks": true,
+    "target": "es6"
   },
   "include": [
-    "tests/typescript"
-  ],
-  "exclude": [
-    "node_modules"
+    "tsTests/**/*"
   ]
 }

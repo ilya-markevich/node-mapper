@@ -5,3 +5,4 @@ coverage
 .gitignore
 .nycrc
 .travis.yml
+tsconfig.json
