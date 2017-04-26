@@ -51,7 +51,9 @@ describe('Mapper', () => {
       const mapper = new Mapper();
 
       mapper.extendMap(newMethodName, methodImplementation);
-      mapper.register(mapper.CAMEL_CASE_CONVENTION, 'test', Object, Object).should.have.property(newMethodName, methodImplementation);
+      mapper.register(mapper.CAMEL_CASE_CONVENTION, 'test', Object, Object);
+
+      mapper.BaseMapInstance.prototype.should.have.property(newMethodName, methodImplementation);
     });
   });
 
@@ -101,9 +103,8 @@ describe('Mapper', () => {
 
       mapper.MapInstance = sinon.mock().withArgs(convention, mapSourceType, mapDestType).returns(mapInstance);
 
-      const resultMapInstance = mapper.register(convention, mapMethodName, mapSourceType, mapDestType);
-
-      resultMapInstance.should.be.eql(mapInstance);
+      mapper.register(convention, mapMethodName, mapSourceType, mapDestType);
+      mapper[mapMethodName].should.be.Function();
     });
   });
 });
